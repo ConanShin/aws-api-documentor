@@ -1,5 +1,8 @@
 ### This library generates swagger-like UI with serverless.yml file of serverless framework.
 
+##### Demo
+https://conanshin.github.io/aws-api-documentor/
+
 ##### How to setup
 1. ```npm install```
 2. Place your yml/yaml file in assets directory with name serverless.yml
