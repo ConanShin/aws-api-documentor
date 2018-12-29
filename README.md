@@ -1,29 +1,32 @@
-# aws-api-documentor
+### This library generates swagger-like UI with serverless.yml file of serverless framework.
 
-## Project setup
-```
-npm install
-```
+##### How to setup
+1. ```npm install```
+2. Place your yml/yaml file in assets directory with name serverless.yml
 
-### Compiles and hot-reloads for development
+##### How to start server
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+##### How to configure
+Declare Query/Body Parameters keys and default values as below in your yml/yaml file.
 ```
-npm run build
+functions:
+  sampleLambdaFunction1:
+    events:
+      - http:
+          path: sample/api/url (required)
+          method: get (required)
+          ...
+          ...
+          queryParameters: (optional)
+            queryParamKey1: 'queryParameter1'
+            queryParamKey2: 'queryParameter2'
+          bodyParameters: (optional)
+            bodyParamKey1: 'bodyParameter1'
+            bodyParamKey2: 'bodyParameter2'
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+##### Todo
+1. Dynamically pass yml/yaml file directory on starting server

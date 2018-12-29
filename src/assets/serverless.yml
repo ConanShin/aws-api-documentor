@@ -1,0 +1,12 @@
+functions:
+  sampleLambdaFunction1:
+    events:
+      - http:
+          path: sample/api/url
+          method: get
+          queryParameters:
+            queryParam1: 'queryParameter1'
+            queryParam2: 'queryParameter2'
+          bodyParameters:
+            bodyParam1: 'bodyParameter1'
+            bodyParam2: 'bodyParameter2'

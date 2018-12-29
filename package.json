@@ -12,6 +12,14 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
-    "vue-template-compiler": "^2.5.17"
+    "axios": "^0.18.0",
+    "json-loader": "^0.5.7",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "vue-property-decorator": "^7.2.0",
+    "vue-template-compiler": "^2.5.17",
+    "yaml-loader": "^0.5.0"
   }
 }
