@@ -55,23 +55,23 @@ export default class App extends Vue {
 
   beforeMount () {
     const json = require('json-loader!yaml-loader!./assets/serverless.yml')
-    this.apiList = Object
+    const list = Object
     .keys(json.functions)
-    .filter(lambdaKey => {
-      return json.functions[lambdaKey].events
-    })
+    .filter(lambdaKey => json.functions[lambdaKey].events)
     .map(lambdaKey => {
-      const configuration = json.functions[lambdaKey].events[0]
-      return {
-        name: lambdaKey,
-        url: configuration.http.path,
-        method: configuration.http.method,
-        queryParameters: configuration.http.queryParameters || '',
-        bodyParameters: configuration.http.bodyParameters || '',
-        isClicked: false,
-        response: ''
-      }
+      return json.functions[lambdaKey].events.map(event => {
+        return {
+          name: lambdaKey,
+          url: event.http.path,
+          method: event.http.method,
+          queryParameters: event.http.queryParameters || '',
+          bodyParameters: event.http.bodyParameters || '',
+          isClicked: false,
+          response: ''
+        }
+      })
     })
+    this.apiList = [].concat.apply([], list);
   }
   mounted () {
     if (this.username) {

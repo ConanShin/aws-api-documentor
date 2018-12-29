@@ -2,11 +2,22 @@ functions:
   sampleLambdaFunction1:
     events:
       - http:
-          path: sample/api/url
+          path: sample1/api/url
           method: get
           queryParameters:
             queryParam1: 'queryParameter1'
             queryParam2: 'queryParameter2'
+      - http:
+          path: sample1/api/url
+          method: post
           bodyParameters:
             bodyParam1: 'bodyParameter1'
             bodyParam2: 'bodyParameter2'
+  sampleLambdaFunction2:
+    events:
+      - http:
+          path: sample2/api/url
+          method: get
+          queryParameters:
+            queryParam1: 'queryParameter1'
+            queryParam2: 'queryParameter2'
